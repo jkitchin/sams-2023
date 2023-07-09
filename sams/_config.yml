@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : SAMS  # The title of the book. Will be placed in the left navbar.
+title                       : SAMS 2023  # The title of the book. Will be placed in the left navbar.
 author                      : John Kitchin  # The author of the book
 copyright                   : "2023"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
@@ -14,7 +14,8 @@ logo                        : logo.png  # A path to the book logo
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-
+  allow_errors: true
+  
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -26,12 +27,17 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/jkitchin/SAMS  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/jkitchin/sams-2023  # Online location of your book
+#  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: gh-pages  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+  notebook_interface: "jupyterlab"
+  jupyterhub_url: "https://lab.amdatascience.com/"  
