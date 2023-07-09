@@ -437,6 +437,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cells">Running cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-cells">Inserting cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interrupt-or-restart-the-kernel">interrupt or restart the kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-your-work-with-others">Sharing your work with others</a></li>
 </ul>
 </li>
 </ul>
@@ -465,7 +466,7 @@ document.write(`
 <p>You are reading a Jupyter notebook. It is a file that ends in .ipynb, in this case you are reading <code class="docutils literal notranslate"><span class="pre">introduction.ipynb</span></code>. A notebook is made of cells; this one is a text-based cell using a markup language called Markdown. It is a pretty simple way to write plain text.</p>
 <p>The next cell is a Code cell. It looks different than a Markdown cell. The background is light grey, and there is a count indicator next to it like <code class="docutils literal notranslate"><span class="pre">[N]:</span></code> which indicates if the cell has been run, and the execution count.</p>
 <p>You can run this cell several different ways. First select it by clicking on it. Then press Ctrl-enter to run it, or click the run button in the button menu under the tab. It looks like an arrow pointing to the right. Note that each time you run the cell, the execution count will become one higher.</p>
-<p><img alt="image.png" src="attachment:e7aceb92-29fb-4f56-ad4a-ae313fb14f41.png" /></p>
+<p><img alt="image.png" src="_images/run.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
@@ -1297,6 +1298,16 @@ Name: Amount, dtype: int64
 <h2>interrupt or restart the kernel<a class="headerlink" href="#interrupt-or-restart-the-kernel" title="Permalink to this heading">#</a></h2>
 <p>Use the Kernel menu to stop a running cell, or to restart the kernel.</p>
 </section>
+<section id="sharing-your-work-with-others">
+<h2>Sharing your work with others<a class="headerlink" href="#sharing-your-work-with-others" title="Permalink to this heading">#</a></h2>
+<p>Not everyone will want to see the notebook in the ipynb form. You can convert your notebook to other forms such as a PDF or HTML. Use the File menu to “Save and Export Notebook as …” to different formats.</p>
+<p>Note that this does not always work. Exporting requires some external packages to be installed, and sometimes there are elements of the notebook that cannot be exported and that will cause export errors. Some common problems are copy and pasted images, and incorrect math equations. With experience you will learn how to fix these.</p>
+<ul class="simple">
+<li><p>PDF converts the notebook to LaTeX, and then converts the LaTeX to PDF. Requires a LaTeX distribution to be installed.</p></li>
+<li><p>Webpdf convertes the notebook to HTML, then converts the HTML to PDF. Requires pyppeteer and Chromium to be installed.</p></li>
+</ul>
+<p>Depending on your Jupyter environment there may be other options to consider as well.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1388,6 +1399,7 @@ Name: Amount, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cells">Running cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-cells">Inserting cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interrupt-or-restart-the-kernel">interrupt or restart the kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-your-work-with-others">Sharing your work with others</a></li>
 </ul>
 </li>
 </ul>
