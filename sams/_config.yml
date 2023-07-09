@@ -16,15 +16,6 @@ execute:
   execute_notebooks: force
   allow_errors: true
   
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-# Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
-
 # Information about where the book exists on the web
 repository:
   url: https://github.com/jkitchin/sams-2023  # Online location of your book
