@@ -61,9 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Analysis of Temperature Data in the United States" href="data-science.html" />
     <link rel="prev" title="Welcome to the Jupyter Lab Workshop for SAMS 2023" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,6 +160,16 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to the Jupyter Lab interface</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="data-science.html">Analysis of Temperature Data in the United States</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="project.html">Ideas for an open-ended project</a></li>
 
 
 
@@ -407,8 +420,25 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-with-jupyter">Introduction to Python with Jupyter</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-with-jupyter">Introduction to Python with Jupyter</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-calculations">Basic calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-introduction-to-data-structures">Brief introduction to data structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycse">pycse</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up-the-introduction">Wrapping up the introduction</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cells">Running cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-cells">Inserting cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interrupt-or-restart-the-kernel">interrupt or restart the kernel</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -473,12 +503,818 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-with-jupyter">
 <h1>Introduction to Python with Jupyter<a class="headerlink" href="#introduction-to-python-with-jupyter" title="Permalink to this heading">#</a></h1>
 <p>Our aim today is to get just enough introduction to some big ideas in Python to do some data analysis. Now you know that Jupyter notebooks are a way to type code into a cell, and then run it to see what the output is.</p>
+<section id="basic-calculations">
+<h2>Basic calculations<a class="headerlink" href="#basic-calculations" title="Permalink to this heading">#</a></h2>
+<p>Python is very good at doing basic calculations with numbers. You can do all the usual things with algebra. Here is addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>This next cell might have a surprise; you only see the output for the last line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can either print both lines, or you could separate them into separate cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are the basic algebraic operators. There are a few new ideas in this cell in addition to the operators:</p>
+<ol class="arabic simple">
+<li><p>The 5 operations are surrounded by parentheses, which group them so you see all the results.</p></li>
+<li><p># is a comment, and Python ignores everything after it on that line</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># addition</span>
+ <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># subtraction</span>
+ <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># multiplication</span>
+ <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="c1"># division</span>
+ <span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># exponentiation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, -1, 6, 0.6666666666666666, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python does not provide basic math functions like sin, cos, exp “out of the box”. We will see soon how to use functions like those.</p>
+</div>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<p>One of the first things we need to be able to do is store results so that we can reuse them later. Variables also make your work more readable.</p>
+<p>We define variables like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = 3
+</pre></div>
+</div>
+<p>To see how we can use them, suppose we have the quadratic equation:</p>
+<p><span class="math notranslate nohighlight">\(a x^2 + b x + c = 0\)</span>. The solution to this equation is known to be <span class="math notranslate nohighlight">\(x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}\)</span>.</p>
+<p>Now for concreteness, suppose we have <span class="math notranslate nohighlight">\(a = 0.5\)</span>, <span class="math notranslate nohighlight">\(b = 2.5\)</span>, and <span class="math notranslate nohighlight">\(c = 2\)</span>. Without variables we write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">2.5</span> <span class="o">+</span> <span class="p">((</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.5</span> <span class="o">-</span> <span class="p">((</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.0, 1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the extensive use of parentheses to make sure the order of operations is correct. We also use <code class="docutils literal notranslate"><span class="pre">**0.5</span></code> for the square root here.</p>
+<p>Otherwise, that is a lot of repetition of values, and not easy to see that it is clearly correct. Let’s do it again with variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.0, 1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you can more easily see the structure of the quadratic equation as we wrote it above, and it is easier to see that this structure is correct. The remaining question now is only to see if <span class="math notranslate nohighlight">\(a,b,c\)</span> are correctly defined.</p>
+<p>Variables are defined persistently, and you can use them in other cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Exercise</em>
+Use the quadratic equation to find the roots of <span class="math notranslate nohighlight">\(x^2 - 5 x + 6=0\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0, 2.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>One of the big benefits of using a notebook like this is documenting your work. You can see exactly what you did, and you can rerun the notebook later if needed. It is easy to make a copy of your notebook to try something new, or edit this notebook to do something differently.</p>
+</section>
+<section id="brief-introduction-to-data-structures">
+<h2>Brief introduction to data structures<a class="headerlink" href="#brief-introduction-to-data-structures" title="Permalink to this heading">#</a></h2>
+<p>Python provides several data structures, or types of data. We previously looked at strings. Here we only consider numbers and lists.</p>
+<p>An integer is a whole number like -1, 0, 123.</p>
+<p>A float is a number with decimals like 1.02</p>
+<p>A list is like a container of things, the syntax looks like <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2.1,</span> <span class="pre">4]</span></code>. The things do not have be the same, you can mix the types of data in them.</p>
+<p>A potential source of confusion occurs when we try to do algebra on these. Python lets you “add” things, but addition means different things for different objects. For numbers, it is addition in the algebraic sense.</p>
+<p>For strings and lists though, addition means concatenate, or join them. Other operations are sometimes also defined for these, e.g. subtraction and multiplication.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="s1">&#39; World&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello  World&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># makes a new list that is 3 copies of the original</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 1, 2, 1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In data science this is usually not what we want to do with lists of numbers. Instead, we want to do operations on each element of the list. For this we need a <em>different</em> data structure called an <em>array</em>. With arrays we can do algebraic operations. We discuss those next.</p>
+</section>
+<section id="numpy">
+<h2>Numpy<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h2>
+<p>As mentioned earlier, the core Python language does not provide most mathematical functions out of the box. You <em>have to import these functions from somewhere to use them</em>. <a class="reference external" href="https://numpy.org">Numpy</a> is a numerical Python library that provides arrays, and functions that work on arrays. To use these we have to <em>import</em> them into the notebook like this.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can create an array, and then do elementwise algebraic operations on it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="mi">2</span> <span class="o">*</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 4, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy provides many ways to <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.array-creation.html">create</a> arrays. One of the more common ones is <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> which creates an array of linearly spaced points from a start to end point. The default number of points is 50.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.12822827, 0.25645654, 0.38468481, 0.51291309,
+       0.64114136, 0.76936963, 0.8975979 , 1.02582617, 1.15405444,
+       1.28228272, 1.41051099, 1.53873926, 1.66696753, 1.7951958 ,
+       1.92342407, 2.05165235, 2.17988062, 2.30810889, 2.43633716,
+       2.56456543, 2.6927937 , 2.82102197, 2.94925025, 3.07747852,
+       3.20570679, 3.33393506, 3.46216333, 3.5903916 , 3.71861988,
+       3.84684815, 3.97507642, 4.10330469, 4.23153296, 4.35976123,
+       4.48798951, 4.61621778, 4.74444605, 4.87267432, 5.00090259,
+       5.12913086, 5.25735913, 5.38558741, 5.51381568, 5.64204395,
+       5.77027222, 5.89850049, 6.02672876, 6.15495704, 6.28318531])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy provides many <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">mathematical functions</a> that operate on arrays. All the standard trigonometric functions, sqrt, exp, etc. are available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00000000e+00,  1.27877162e-01,  2.53654584e-01,  3.75267005e-01,
+        4.90717552e-01,  5.98110530e-01,  6.95682551e-01,  7.81831482e-01,
+        8.55142763e-01,  9.14412623e-01,  9.58667853e-01,  9.87181783e-01,
+        9.99486216e-01,  9.95379113e-01,  9.74927912e-01,  9.38468422e-01,
+        8.86599306e-01,  8.20172255e-01,  7.40277997e-01,  6.48228395e-01,
+        5.45534901e-01,  4.33883739e-01,  3.15108218e-01,  1.91158629e-01,
+        6.40702200e-02, -6.40702200e-02, -1.91158629e-01, -3.15108218e-01,
+       -4.33883739e-01, -5.45534901e-01, -6.48228395e-01, -7.40277997e-01,
+       -8.20172255e-01, -8.86599306e-01, -9.38468422e-01, -9.74927912e-01,
+       -9.95379113e-01, -9.99486216e-01, -9.87181783e-01, -9.58667853e-01,
+       -9.14412623e-01, -8.55142763e-01, -7.81831482e-01, -6.95682551e-01,
+       -5.98110530e-01, -4.90717552e-01, -3.75267005e-01, -2.53654584e-01,
+       -1.27877162e-01, -2.44929360e-16])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="matplotlib">
+<h2>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h2>
+<p>Looking at arrays is not convenient. It is much more common to make plots to see how the data looks. We use <a class="reference external" href="https://matplotlib.org/">matplotlib</a> for this. As with numpy, we have to import it.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import matplotlib.pyplot as plt
+</pre></div>
+</div>
+<p>Then, we can make simple plots of <span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>  <span class="c1"># use a ; to suppress the output of the last line.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5889cd7ba03c9e9e36ad6d30a62d2e9734466849f9920172391384c76038d40d.png" src="_images/5889cd7ba03c9e9e36ad6d30a62d2e9734466849f9920172391384c76038d40d.png" />
+</div>
+</div>
+</section>
+<section id="data-files">
+<h2>Data files<a class="headerlink" href="#data-files" title="Permalink to this heading">#</a></h2>
+<p>Very often the data we need is stored in data files. Here is an <a class="reference external" href="https://raw.githubusercontent.com/Tanishqa-10/AskPython/main/Sampledata.csv">example file</a>. This file is plain text with data in rows. The values in each row are separated by commas, so this is called a csv file, or comma-separated values file.</p>
+<p>We use the next cell to retrieve the data and display it here. We import a new library to get the data, and then print the string that it returns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Tanishqa-10/AskPython/main/Sampledata.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name,Last Name,Member,City,Code,Amount
+Jim,Doe,No,Ohio, JD,8075
+Gill,McGinnis,Yes,Texas, GM,9119
+Joe,Repici,Yes,Bostan, JR,8075
+Stephen,Tyler,No,LA,ST,91234
+Oscar,Blankman,No,NYC,OB,298
+Kelly,Jet, No,Desert City,KJ,123
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many kinds of data files, but csv is the kind we use today. Next, we learn how to read this into a data structure we can do analysis with.</p>
+</section>
+<section id="pandas">
+<h2>pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/">pandas</a> a bigger, better kind of array that we will use in our analysis. Instead of an <em>array</em>, pandas provides something like it that is called a <em>Dataframe</em>. The key way we will use pandas is in reading a data file to create a Dataframe we will use in our analysis.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+</pre></div>
+</div>
+<p>pandas is very powerful, and can even read urls to data files. Here we read the csv file described above to get a dataframe. Note that Jupyter displays a <em>fancy</em> representation of the dataframe, making it look like a table. This is a feature of Jupyter that makes it better than using plain Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Tanishqa-10/AskPython/main/Sampledata.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Member</th>
+      <th>City</th>
+      <th>Code</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Jim</td>
+      <td>Doe</td>
+      <td>No</td>
+      <td>Ohio</td>
+      <td>JD</td>
+      <td>8075</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Gill</td>
+      <td>McGinnis</td>
+      <td>Yes</td>
+      <td>Texas</td>
+      <td>GM</td>
+      <td>9119</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Joe</td>
+      <td>Repici</td>
+      <td>Yes</td>
+      <td>Bostan</td>
+      <td>JR</td>
+      <td>8075</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Stephen</td>
+      <td>Tyler</td>
+      <td>No</td>
+      <td>LA</td>
+      <td>ST</td>
+      <td>91234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Oscar</td>
+      <td>Blankman</td>
+      <td>No</td>
+      <td>NYC</td>
+      <td>OB</td>
+      <td>298</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Kelly</td>
+      <td>Jet</td>
+      <td>No</td>
+      <td>Desert City</td>
+      <td>KJ</td>
+      <td>123</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The thing that makes Dataframes so useful is we can extract columns by their name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Amount&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     8075
+1     9119
+2     8075
+3    91234
+4      298
+5      123
+Name: Amount, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also do analysis on the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Amount&#39;</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Amount&#39;</span><span class="p">]),</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(116924, 19487.333333333332)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;City&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Amount&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amount&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/434bfcfa61e5d566b09702a66dbfd78a133840d4014aa37919e1d5dad8292ce6.png" src="_images/434bfcfa61e5d566b09702a66dbfd78a133840d4014aa37919e1d5dad8292ce6.png" />
+</div>
+</div>
+</section>
+<section id="pycse">
+<h2>pycse<a class="headerlink" href="#pycse" title="Permalink to this heading">#</a></h2>
+<p>The last package I want to introduce is <a class="reference external" href="https://kitchingroup.cheme.cmu.edu/pycse/intro.html">pycse</a>. This is a package I wrote to augment scientific computations in Python. The context we will use it here is predominantly for fitting a line to some data.</p>
+<p>Check out this <a class="reference external" href="https://itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Norris.dat">data file</a>. It is a little different than what we saw before. First there are 60 lines of header information that are useful for context, but not helpful for analysis. After that, there are two columns of data that we want to do some analysis on. We know from the header that the data is linear, and we want to fit a line to this data. We can use pandas to read this file too, but we have to tell it to skip 60 rows, to use spaces for separating the data, and we can provide names for the columns.</p>
+<p>This data is from the calibration of Ozone monitors and contains a column of reference data and measured data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Norris.dat&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>y</th>
+      <th>x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.1</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>338.8</td>
+      <td>337.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>118.1</td>
+      <td>118.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>888.0</td>
+      <td>884.6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9.2</td>
+      <td>10.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>228.1</td>
+      <td>226.5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>668.5</td>
+      <td>666.3</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>998.5</td>
+      <td>996.3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>449.1</td>
+      <td>448.6</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>778.9</td>
+      <td>777.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>559.2</td>
+      <td>558.2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.3</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.1</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>778.1</td>
+      <td>775.5</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>668.8</td>
+      <td>666.9</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>339.3</td>
+      <td>338.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>448.9</td>
+      <td>447.5</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>10.8</td>
+      <td>11.6</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>557.7</td>
+      <td>556.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>228.3</td>
+      <td>228.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>998.0</td>
+      <td>995.8</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>888.8</td>
+      <td>887.6</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>119.6</td>
+      <td>120.2</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.3</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0.6</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>557.6</td>
+      <td>556.8</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>339.3</td>
+      <td>339.1</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>888.0</td>
+      <td>887.2</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>998.5</td>
+      <td>999.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>778.9</td>
+      <td>779.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>10.2</td>
+      <td>11.1</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>117.6</td>
+      <td>118.3</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>228.9</td>
+      <td>229.2</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>668.4</td>
+      <td>669.1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>449.2</td>
+      <td>448.9</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>0.2</td>
+      <td>0.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s plot our data to see how it lools.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">);</span>                     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/301cc38f5057769274a72f62173da68d6c50fabd3636aaabf92913540bce1d1c.png" src="_images/301cc38f5057769274a72f62173da68d6c50fabd3636aaabf92913540bce1d1c.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pycse</span></code> provides a function called <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> to fit polynomials to data. A line is just a polynomial of degree=1. So, we can use <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> to fit a line to (x, y) data. <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> returns the fit to <span class="math notranslate nohighlight">\(y = B0 x  + B1\)</span> as <span class="math notranslate nohighlight">\((B0, B1)\)</span>. Additionally, it provides a confidence interval on each parameter, and the standard error estimate for each parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycse</span> <span class="kn">import</span> <span class="n">polyfit</span>
+
+<span class="n">pars</span><span class="p">,</span> <span class="n">pint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pycse</span> <span class="kn">import</span> <span class="n">polyfit</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pars</span><span class="p">,</span> <span class="n">pint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">pars</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pycse&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span> <span class="c1"># compare these values to the values in the header</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">se</span> <span class="c1"># compare these values to the values in the header</span>
+
+<span class="ne">NameError</span>: name &#39;se&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>These are exactly the same as the example data file suggests. Doing exercises like this are an important way to make sure the tools you are using are doing the right things. Note that the parameters are not in the same order as in the data file, but that is because <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> writes the equation in a different order.</p>
+<p>It is always a good idea to see how the fit looks. We can plot the fit on the data like this. The idea is to make a linspace array over the range of the x-data, and calculate the line from the fitted parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]))</span>
+
+<span class="n">B0</span><span class="p">,</span> <span class="n">B1</span> <span class="o">=</span> <span class="n">pars</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">B1</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;fit&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]))</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span> <span class="o">=</span> <span class="n">pars</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">B0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">B1</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;fit&#39;</span><span class="p">]);</span>
+
+<span class="ne">NameError</span>: name &#39;pars&#39; is not defined
+</pre></div>
+</div>
+<img alt="_images/301cc38f5057769274a72f62173da68d6c50fabd3636aaabf92913540bce1d1c.png" src="_images/301cc38f5057769274a72f62173da68d6c50fabd3636aaabf92913540bce1d1c.png" />
+</div>
+</div>
+<p>This fit looks pretty good. For now, we consider this sufficient.</p>
+<p><strong>Exercise</strong>: Add x and y labels to the plot above.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="wrapping-up-the-introduction">
+<h1>Wrapping up the introduction<a class="headerlink" href="#wrapping-up-the-introduction" title="Permalink to this heading">#</a></h1>
+<p>This concludes the introduction. This covered just enough material to get to the next step in our program, which is data analysis of historical temperature data.</p>
+<p>You can open it <a class="reference internal" href="data-science.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="resources">
 <h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
 <ol class="arabic simple">
+<li><p><a class="reference external" href="https://pointbreezepubs.gumroad.com/l/pycse-intro">Introduction to Python computations in science and engineering</a></p></li>
 <li><p><a class="reference external" href="https://kitchingroup.cheme.cmu.edu/pycse/intro.html">pycse</a> This exhaustive resource covers Python computing in science and engineering.</p></li>
 </ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tips">
+<h1>Tips<a class="headerlink" href="#tips" title="Permalink to this heading">#</a></h1>
+<section id="running-cells">
+<h2>Running cells<a class="headerlink" href="#running-cells" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>C-enter executes the current cell and keeps it selected</p></li>
+<li><p>shift-enter executes the current cell and selects the next cell</p></li>
+<li><p>alt-enter executes the current cell and inserts a new cell after it.</p></li>
+</ol>
+<p>Use the Run menu to run all the cells</p>
+</section>
+<section id="inserting-cells">
+<h2>Inserting cells<a class="headerlink" href="#inserting-cells" title="Permalink to this heading">#</a></h2>
+<p>You can insert cells above or below the current cell in the following ways:</p>
+<ol class="arabic simple">
+<li><p>With the cell selected, use the icons in the cell on the right to add a cell.</p></li>
+<li><p>Type Esc-a to insert above the cell, and Esc-b to insert below the cell.</p></li>
+</ol>
+</section>
+<section id="interrupt-or-restart-the-kernel">
+<h2>interrupt or restart the kernel<a class="headerlink" href="#interrupt-or-restart-the-kernel" title="Permalink to this heading">#</a></h2>
+<p>Use the Kernel menu to stop a running cell, or to restart the kernel.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -521,6 +1357,15 @@ document.write(`
         <p class="prev-next-title">Welcome to the Jupyter Lab Workshop for SAMS 2023</p>
       </div>
     </a>
+    <a class="right-next"
+       href="data-science.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analysis of Temperature Data in the United States</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -544,8 +1389,25 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-with-jupyter">Introduction to Python with Jupyter</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-with-jupyter">Introduction to Python with Jupyter</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-calculations">Basic calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-introduction-to-data-structures">Brief introduction to data structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycse">pycse</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up-the-introduction">Wrapping up the introduction</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cells">Running cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-cells">Inserting cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interrupt-or-restart-the-kernel">interrupt or restart the kernel</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
