@@ -1,11 +1,8 @@
 # Welcome to the Jupyter Lab Workshop for SAMS 2023
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Jupyter Lab is a computational environment that runs in your browser where you can write and run code to solve problems, perform analyses, and make graphical representations of data.
 
-Check out the content pages bundled with this sample book to see more.
+This workshop will introduce Jupyter Lab through https://www.amdatascience.com/, which is an online platform developed by a CMU alum.
 
 ```{tableofcontents}
 ```
