@@ -401,7 +401,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to the Jupyter Lab workshop for SAMS 2023!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-browser-interface">Tour of the browser interface</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-browser-interface">Tour of the browser interface</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -422,7 +425,26 @@ document.write(`
 <h1>Tour of the browser interface<a class="headerlink" href="#tour-of-the-browser-interface" title="Permalink to this heading">#</a></h1>
 <p>The Jupyter lab browser interface has a few main parts. The main window this cell is in is where most computations are done. This window is made of interactive cells; some are text based, and some are code based. You can click on a cell to make it “active” so you can interact with it. The active cell will show a blue bar on the left. You can also use the up/down arrows to change what cell is selected. There may be tabs at the top, where you can select different files, or other open windows.</p>
 <p>At the top of the frame are menus. You can use these to open files, or perform other tasks on the active tab.</p>
-<p>On the left of the window are buttons to open a file explorer, see what is running, or see a Table of contents.</p>
+<p>On the left of the window are buttons to open a file explorer, see what is running, or see a table of contents. The table of contents is clickable, so you can jump to any cell that is labeled there.</p>
+<section id="jupyter-notebooks">
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h2>
+<p>You are reading a Jupyter notebook. It is a file that ends in .ipynb, in this case you are reading <code class="docutils literal notranslate"><span class="pre">introduction.ipynb</span></code>. A notebook is made of cells; this one is a text-based cell using a markup language called Markdown. It is a pretty simply way to write plain text.</p>
+<p>The next cell is a Code cell. It looks different than a Markdown cell. The background is light grey, and there is a count indicator next to it like <code class="docutils literal notranslate"><span class="pre">[N]:</span></code> which indicates if the cell has been run, and the execution count.</p>
+<p>You can run this cell several different ways. First select it by clicking on it. Then press Ctrl-enter to run it, or click the run button in the button menu under the tab. It looks like an arrow pointing to the right.</p>
+<p><img alt="image.png" src="attachment:e7aceb92-29fb-4f56-ad4a-ae313fb14f41.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -484,7 +506,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to the Jupyter Lab workshop for SAMS 2023!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-browser-interface">Tour of the browser interface</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-browser-interface">Tour of the browser interface</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
