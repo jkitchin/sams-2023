@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to the Jupyter Lab workshop for SAMS 2023! &#8212; SAMS 2023</title>
+    <title>Introduction to the Jupyter Lab interface &#8212; SAMS 2023</title>
   
   
   
@@ -156,7 +156,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Welcome to the Jupyter Lab workshop for SAMS 2023!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to the Jupyter Lab interface</a></li>
+
+
 
 </ul>
 
@@ -390,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to the Jupyter Lab workshop for SAMS 2023!</h1>
+    <h1>Introduction to the Jupyter Lab interface</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,11 +402,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to the Jupyter Lab workshop for SAMS 2023!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to the Jupyter Lab interface</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-browser-interface">Tour of the browser interface</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-with-jupyter">Introduction to Python with Jupyter</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 
             </nav>
@@ -417,8 +421,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-the-jupyter-lab-workshop-for-sams-2023">
-<h1>Welcome to the Jupyter Lab workshop for SAMS 2023!<a class="headerlink" href="#welcome-to-the-jupyter-lab-workshop-for-sams-2023" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-the-jupyter-lab-interface">
+<h1>Introduction to the Jupyter Lab interface<a class="headerlink" href="#introduction-to-the-jupyter-lab-interface" title="Permalink to this heading">#</a></h1>
 <p>Today computing is used everywhere. We are going to introduce you to Jupyter Lab, which is a computing environment that you can use to write Python code to solve problems, do analysis, make figures, and more.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="tour-of-the-browser-interface">
@@ -430,7 +434,7 @@ document.write(`
 <h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h2>
 <p>You are reading a Jupyter notebook. It is a file that ends in .ipynb, in this case you are reading <code class="docutils literal notranslate"><span class="pre">introduction.ipynb</span></code>. A notebook is made of cells; this one is a text-based cell using a markup language called Markdown. It is a pretty simply way to write plain text.</p>
 <p>The next cell is a Code cell. It looks different than a Markdown cell. The background is light grey, and there is a count indicator next to it like <code class="docutils literal notranslate"><span class="pre">[N]:</span></code> which indicates if the cell has been run, and the execution count.</p>
-<p>You can run this cell several different ways. First select it by clicking on it. Then press Ctrl-enter to run it, or click the run button in the button menu under the tab. It looks like an arrow pointing to the right.</p>
+<p>You can run this cell several different ways. First select it by clicking on it. Then press Ctrl-enter to run it, or click the run button in the button menu under the tab. It looks like an arrow pointing to the right. Note that each time you run the cell, the execution count will become one higher.</p>
 <p><img alt="image.png" src="attachment:e7aceb92-29fb-4f56-ad4a-ae313fb14f41.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -444,7 +448,37 @@ document.write(`
 </div>
 </div>
 </div>
+<p>In the cell above we ran our first Python command that prints a string. The <code class="docutils literal notranslate"><span class="pre">print</span></code> is in green because it is a command. <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code> is the string. It is red in color to indicate it is a string. We use single quotes here, but you can also use double quotes.</p>
+<p>Select the empty cell below, and then type a command to output <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">SAMS!</span></code>. The cell below that has a solution in it.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello SAMS!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello SAMS!
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-with-jupyter">
+<h1>Introduction to Python with Jupyter<a class="headerlink" href="#introduction-to-python-with-jupyter" title="Permalink to this heading">#</a></h1>
+<p>Our aim today is to get just enough introduction to some big ideas in Python to do some data analysis. Now you know that Jupyter notebooks are a way to type code into a cell, and then run it to see what the output is.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://kitchingroup.cheme.cmu.edu/pycse/intro.html">pycse</a> This exhaustive resource covers Python computing in science and engineering.</p></li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,11 +539,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to the Jupyter Lab workshop for SAMS 2023!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to the Jupyter Lab interface</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-browser-interface">Tour of the browser interface</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python-with-jupyter">Introduction to Python with Jupyter</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 
   </nav></div>
