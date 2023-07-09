@@ -462,7 +462,7 @@ document.write(`
 <p>On the left of the window are buttons to open a file explorer, see what is running, or see a table of contents. The table of contents is clickable, so you can jump to any cell that is labeled there.</p>
 <section id="jupyter-notebooks">
 <h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h2>
-<p>You are reading a Jupyter notebook. It is a file that ends in .ipynb, in this case you are reading <code class="docutils literal notranslate"><span class="pre">introduction.ipynb</span></code>. A notebook is made of cells; this one is a text-based cell using a markup language called Markdown. It is a pretty simply way to write plain text.</p>
+<p>You are reading a Jupyter notebook. It is a file that ends in .ipynb, in this case you are reading <code class="docutils literal notranslate"><span class="pre">introduction.ipynb</span></code>. A notebook is made of cells; this one is a text-based cell using a markup language called Markdown. It is a pretty simple way to write plain text.</p>
 <p>The next cell is a Code cell. It looks different than a Markdown cell. The background is light grey, and there is a count indicator next to it like <code class="docutils literal notranslate"><span class="pre">[N]:</span></code> which indicates if the cell has been run, and the execution count.</p>
 <p>You can run this cell several different ways. First select it by clicking on it. Then press Ctrl-enter to run it, or click the run button in the button menu under the tab. It looks like an arrow pointing to the right. Note that each time you run the cell, the execution count will become one higher.</p>
 <p><img alt="image.png" src="attachment:e7aceb92-29fb-4f56-ad4a-ae313fb14f41.png" /></p>
@@ -479,25 +479,7 @@ document.write(`
 </div>
 </div>
 <p>In the cell above we ran our first Python command that prints a string. The <code class="docutils literal notranslate"><span class="pre">print</span></code> is in green because it is a command. <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code> is the string. It is red in color to indicate it is a string. We use single quotes here, but you can also use double quotes.</p>
-<p>Select the empty cell below, and then type a command to output <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">SAMS!</span></code>. The cell below that has a solution in it.</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello SAMS!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello SAMS!
-</pre></div>
-</div>
-</div>
-</div>
+<p>Select the empty cell below, and then type a command to output <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">SAMS!</span></code>.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-with-jupyter">
@@ -1219,7 +1201,7 @@ Name: Amount, dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pycse</span> <span class="kn">import</span> <span class="n">polyfit</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pars</span><span class="p">,</span> <span class="n">pint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">pars</span><span class="p">)</span>
@@ -1238,7 +1220,7 @@ Name: Amount, dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">se</span> <span class="c1"># compare these values to the values in the header</span>
 
 <span class="ne">NameError</span>: name &#39;se&#39; is not defined
@@ -1263,7 +1245,7 @@ Name: Amount, dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]))</span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">B0</span><span class="p">,</span> <span class="n">B1</span> <span class="o">=</span> <span class="n">pars</span>
