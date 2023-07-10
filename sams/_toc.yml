@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: getting-started.ipynb
 - file: introduction.ipynb
 - file: data-science.ipynb
 - file: project.ipynb  
