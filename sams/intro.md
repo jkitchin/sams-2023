@@ -23,3 +23,10 @@ To get started, open this link [introduction.ipynb](introduction.ipynb). Look fo
 
 If you need to log in, select "Continue with Google", and log in with your Andrew id. Then select the "Professor Kitchin Workshop S2023", scroll to the bottom and click start. This should open the file in your Jupyter lab after it starts up.
 
+## If you have trouble, find bugs or typos
+
+You can file an issue by looking for the octocat icon at the top, and selecting "Open issue" on any page.
+
+![img](issues.png)
+
+You can also go to https://github.com/jkitchin/sams-2023/issues. You will need a GitHUB account to post issues. You can also find me (Prof. Kitchin) on Discord at https://discord.gg/upZuWP4hdz, or by email at [jkitchin@andrew.cmu.edu](mailto://jkitchin@andrew.cmu.edu).
