@@ -483,6 +483,7 @@ document.write(`
 </div>
 <p>In the cell above we ran our first Python command that prints a string. The <code class="docutils literal notranslate"><span class="pre">print</span></code> is in green because it is a command. <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code> is the string. It is red in color to indicate it is a string. We use single quotes here, but you can also use double quotes.</p>
 <p>Select the empty cell below, and then type a command to output <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">SAMS!</span></code>.</p>
+<p>See the <span class="xref myst">solution</span>.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-with-jupyter">
@@ -614,28 +615,7 @@ document.write(`
 </div>
 <p><em>Exercise</em>
 Use the quadratic equation to find the roots of <span class="math notranslate nohighlight">\(x^2 - 5 x + 6=0\)</span>.</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">6</span>
-
-<span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0, 2.0)
-</pre></div>
-</div>
-</div>
-</div>
+<p>See the <span class="xref myst">solution</span>.</p>
 <p>One of the big benefits of using a notebook like this is documenting your work. You can see exactly what you did, and you can rerun the notebook later if needed. It is easy to make a copy of your notebook to try something new, or edit this notebook to do something differently.</p>
 </section>
 <section id="brief-introduction-to-data-structures">
@@ -683,6 +663,27 @@ Use the quadratic equation to find the roots of <span class="math notranslate no
 </div>
 </div>
 <p>In data science this is usually not what we want to do with lists of numbers. Instead, we want to do operations on each element of the list. For this we need a <em>different</em> data structure called an <em>array</em>. With arrays we can do algebraic operations. We discuss those next.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may get errors if you try unsupported operations. Here is what one looks like.</p>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;tree&#39;</span> <span class="o">-</span> <span class="s1">&#39;ree&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;tree&#39;</span> <span class="o">-</span> <span class="s1">&#39;ree&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="numpy">
 <h2>Numpy<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h2>
