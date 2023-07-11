@@ -678,14 +678,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pycse</span> <span class="kn">import</span> <span class="n">polyfit</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">p</span><span class="p">,</span> <span class="n">pint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">ny</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">pint</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pycse&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 8.86763323e-03  1.58863297e-02]
+ [-2.39031923e+01 -1.01373455e+01]]
 </pre></div>
 </div>
 </div>
@@ -705,18 +699,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">ny</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature (C)&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;p&#39; is not defined
-</pre></div>
-</div>
-<img alt="_images/b33569a32bb5e4a4e16348cb9db61faf004304d1728d5e6b3dbf40fc4e7d6c5d.png" src="_images/b33569a32bb5e4a4e16348cb9db61faf004304d1728d5e6b3dbf40fc4e7d6c5d.png" />
+<img alt="_images/84e539c5259ba3be901f6071da2b98f7ea885dd251848395f79d3fde2bfc05d8.png" src="_images/84e539c5259ba3be901f6071da2b98f7ea885dd251848395f79d3fde2bfc05d8.png" />
 </div>
 </div>
 <p>Now for another one.</p>
@@ -736,16 +719,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">p</span><span class="p">,</span> <span class="n">pint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">ga</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">ga</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;polyfit&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.56792304e-03  4.59772930e-03]
+ [ 8.88496007e+00  2.09777221e+01]]
 </pre></div>
 </div>
+<img alt="_images/3be61e76879735bb387337857d84524f0cb6341417b4b79eb9c308178d05049f.png" src="_images/3be61e76879735bb387337857d84524f0cb6341417b4b79eb9c308178d05049f.png" />
 </div>
 </div>
 <p>Note here the confidence interval on the slope includes 0. That means we can not say with confidence that the temperature in Ga has risen over the last century; or more precisely, that it has risen linearly. Temperature is just one dimension of weather though, and this doesn’t mean the climate there hasn’t changed. There could be changes in precipitation, or storms, for example.</p>
@@ -770,15 +748,58 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="p">(</span><span class="n">cname</span><span class="p">,</span> <span class="n">cdata</span><span class="p">)</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">if</span> <span class="n">cname</span> <span class="o">!=</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>         <span class="n">p</span><span class="p">,</span> <span class="n">pint</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">cdata</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">cname</span><span class="si">:</span><span class="s1">25s</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">1.2e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>    
-
-<span class="ne">NameError</span>: name &#39;polyfit&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>United States             9.86e-03
+Alabama                   9.45e-04
+Alaska                    1.65e-02
+Arizona                   1.48e-02
+Arkansas                  2.40e-03
+California                1.15e-02
+Colorado                  9.60e-03
+Connecticut               1.86e-02
+Delaware                  1.09e-02
+District of Columbia      1.05e-02
+Florida                   7.20e-03
+Georgia                   1.51e-03
+Hawaii                    1.81e-02
+Idaho                     8.59e-03
+Illinois                  5.83e-03
+Indiana                   6.60e-03
+Iowa                      6.75e-03
+Kansas                    8.70e-03
+Kentucky                  3.75e-03
+Louisiana                 3.71e-03
+Maine                     1.43e-02
+Maryland                  1.03e-02
+Massachusetts             1.92e-02
+Michigan                  1.12e-02
+Minnesota                 1.33e-02
+Mississippi               1.20e-03
+Missouri                  4.72e-03
+Montana                   1.08e-02
+Nebraska                  8.29e-03
+Nevada                    1.15e-02
+New Hampshire             1.60e-02
+New Jersey                1.56e-02
+New Mexico                1.13e-02
+New York                  1.24e-02
+North Carolina            6.03e-03
+North Dakota              1.36e-02
+Ohio                      6.36e-03
+Oklahoma                  5.22e-03
+Oregon                    8.97e-03
+Pennsylvania              9.33e-03
+Rhode Island              2.09e-02
+South Carolina            4.16e-03
+South Dakota              1.05e-02
+Tennessee                 2.33e-03
+Texas                     4.91e-03
+Utah                      1.04e-02
+Vermont                   1.55e-02
+Virginia                  7.47e-03
+Washington                9.45e-03
+West Virginia             6.14e-03
+Wisconsin                 1.07e-02
+Wyoming                   9.08e-03
 </pre></div>
 </div>
 </div>
