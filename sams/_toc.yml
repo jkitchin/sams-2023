@@ -9,3 +9,4 @@ chapters:
 - file: data-science.ipynb
 - file: project.ipynb  
 - file: next-steps.md
+- file: supplemental.ipynb
